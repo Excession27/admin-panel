@@ -1,6 +1,7 @@
-p, h1, h2, h3, h4, h5, h6, ul, li, a {
-    all: unset;
-} 
+body {
+    height: 100vh;
+}
+
 a {
     cursor: pointer;
 }
@@ -21,4 +22,13 @@ a {
 
 .card {
     width: 70%;
+}
+
+.dropdown-item {
+    overflow: hidden;
+}
+
+li {
+    list-style: none;
+    list-style-position: unset;
 }
