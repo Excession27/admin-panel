@@ -28,7 +28,7 @@ a {
     overflow: hidden;
 }
 
-li {
+aside li {
     list-style: none;
     list-style-position: unset;
 }
