@@ -11,32 +11,32 @@
 </head>
 <body>
 
-    <header class="container">
-        <div class="row bg-gray justify-content-between header-row align-items-center">
-
+    <header class="container-fluid">
+        <div class="row shadow justify-content-between header-row align-items-center bg-light mb-1">
+          
                 <div class="logo col">
-                    <p>Logo</p>
+                    <p class="text-dark">Logo</p>
                 </div>
                 
-                    <div class="dropdown active-user col text-end">
+              <div class="dropdown active-user col text-end">
                         
-                        <button class="btn btn-secondary dropdown-toggle"   type="button" id="dropdownMenuButton"     data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn dropdown-toggle"   type="button" id="dropdownMenuButton"     data-bs-toggle="dropdown" aria-expanded="false">
                           User
                         </button>
                         
-                        <ul class="dropdown-menu dropdown-menu-end"         aria-labelledby="dropdownMenuButton">
+                        <ul class="dropdown-menu dropdown-menu-end bg-light shadow-sm"         aria-labelledby="dropdownMenuButton">
                             <li>
-                                <a class="dropdown-item" href="#">Profile   settings</a>
+                                <a class="dropdown-item" href="#">Profile</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="#">Logout</a>
                             </li>
                         </ul>
-                    </div>
+               </div>
         </div>
         <div class="row navigation d-lg-none">
 
-            <div class="col">
+            
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
                       
@@ -70,59 +70,45 @@
                       </div>
                     </div>
                   </nav>
-            </div>
-
         </div>
     </header>
 
-    
-    <aside class="container d-none d-lg-block">
-        <div class="row">
-            <div class="col-2">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
+    <div class="container-fluid panel bg-primary">
+      <div class="row h-100">
+        <aside class="col-3 col-xl-2 d-none d-lg-block bg-warning text-center">
+            <li class="nav-item">
+                <a class="nav-link active   mb-3"aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link" href="#">Teacher</a>
+            </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link" href="#">Reviews</a>
+            </li>
+        </aside>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Teachers</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Courses</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
-                  </li>
+        <main class="col bg-info">
+            <div class="">
+              <div class="col">
+              
+                <p>Lorem ipsum dolor sit  amet,consectetur   adipisicing elit. Ex hic  animi eos,  tenetur facilis  commodiexpedita eius   iste   explicabo corporisullam  voluptate,   consequatur  repudiandae fugiat fuga     impeditperferendis numquam   libero?</p>
+              
+              </div>
             </div>
-        </div>
+          
+        </main>
+    </div>
+  </div>
 
-    </aside>
-
-    <main class="container">
+    <!-- <footer class="container">
         <div class="row">
-
-
-            <div class="col">
-
-
-
-
-
-            </div>
-        </div>
- 
-
-
-    </main>
-    
-
-    <footer class="container">
-        <div class="row">
-
+          Footer
         </div>
 
-    </footer>
+    </footer> -->
     
 
 

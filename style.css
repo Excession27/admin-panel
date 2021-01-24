@@ -1,5 +1,9 @@
-body {
+body, html {
     height: 100vh;
+}
+
+.logo p {
+    margin: 0;
 }
 
 a {
@@ -31,4 +35,10 @@ a {
 aside li {
     list-style: none;
     list-style-position: unset;
+}
+
+.panel {
+    /* height: 94.8%; */
+    height: calc(100% - 50px - 0.25rem);
+
 }
