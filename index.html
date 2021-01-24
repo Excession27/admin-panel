@@ -6,7 +6,12 @@
     <title>Admin panel</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    
     <link rel="stylesheet" href="style.css">
+
+
 
 </head>
 <body>
@@ -76,11 +81,8 @@
     <div class="container-fluid panel bg-primary">
       <div class="row h-100">
         <aside class="col-3 col-xl-2 d-none d-lg-block bg-warning text-center">
-            <li class="nav-item">
-                <a class="nav-link active   mb-3"aria-current="page" href="#">Home</a>
-            </li>
             <li class="nav-item mb-3">
-              <a class="nav-link" href="#">Teacher</a>
+              <a class="nav-link active" href="index.html">Teacher</a>
             </li>
             <li class="nav-item mb-3">
               <a class="nav-link" href="#">Courses</a>
@@ -88,16 +90,93 @@
             <li class="nav-item mb-3">
               <a class="nav-link" href="#">Reviews</a>
             </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link" href="#">Configuration</a>
+            </li>
         </aside>
 
         <main class="col bg-info">
-            <div class="">
-              <div class="col">
-              
-                <p>Lorem ipsum dolor sit  amet,consectetur   adipisicing elit. Ex hic  animi eos,  tenetur facilis  commodiexpedita eius   iste   explicabo corporisullam  voluptate,   consequatur  repudiandae fugiat fuga     impeditperferendis numquam   libero?</p>
-              
+          <div class="row">    
+            <div class="col-6 ps-5">
+            
+              <div class="row mt-5 mb-4">
+                <h3>Edit teacher</h3>
               </div>
+              <div class="row">
+                <div class="form-floating mb-4">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Name">
+                  <label class="ps-4" for="floatingInput">Teacher's name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-4">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Quote">
+                  <label class="ps-4" for="floatingInput">Quote</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-4">
+                  <textarea class="form-control about-teacher"  placeholder="About" id="floatingTextarea"></textarea>
+                  <label class="ps-4" for="floatingTextarea">About</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-4">
+                  <select class="form-select"   id="floatingSelect" aria-label="Floating  label select example">
+                    <option selected>Select a course</option>
+                    <option value="1">Programming</option>
+                    <option value="2">Graphic design</option>
+                    <option value="3">Business &amp;  Management</option>
+                  </select>
+                  <label class="ps-4" for="floatingSelect">Teaching a  course</label>
+                </div>
+              </div>
+          
             </div>
+          
+          <div class="col-6 d-flex align-items-center justify-content-center">
+            <div class="drop-it-hot bg-secondary" id="drop-area">
+              
+              <div class="circle">
+                
+                  <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                  </svg>
+              </div>
+              <form class="choose-files">
+                  <div class="button-wrapper">
+                      <label class="label text-dark" for="fileElem">Drag image here to upload or</label>
+                      <button type="button" class="btn-drop bg-light text-dark">Choose image</button>
+                      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                      
+                  </div>
+              </form>
+              <div id="gallery"></div>
+          </div>
+          
+          <!-- <div class="editor">
+              <div class="range-wrapper">
+                  <label for="contrast">Contrast</label>
+                  <input class="range" name="contrast" value="100" type="range" min="0" max="200" data-unit="%">
+              </div>
+              <div class="range-wrapper">
+                  <label for="brightness">Brightness</label>
+                  <input class="range" name="brightness" value="100" type="range" min="0" max="200" data-unit="%">
+              </div>
+              <div class="range-wrapper">
+                  <label for="blur">Hue</label>
+                  <input class="range" name="hue-rotate" value="0" type="range" min="0" max="200" data-unit="deg">
+              </div>
+              <div class="range-wrapper">
+                  <label for="sepia">Sepia</label>
+                  <input class="range" name="sepia" value="0" type="range" min="0" max="200" data-unit="%">
+              </div>
+          </div> -->
+
+          </div>
+
+          </div>
           
         </main>
     </div>
@@ -117,5 +196,80 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
+
+    <script>
+      const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
+      const dragHighlight = ['dragenter', 'dragover'];
+      const dragUnighlight = ['dragleave', 'drop'];
+      const inputRange = document.querySelectorAll('.editor input');
+
+      const dropArea = document.getElementById('drop-area');
+      const iconElement = document.querySelector('.circle');
+      const editorElement = document.querySelector('.editor');
+
+      const preventDefaults = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      };
+
+      const highlight = () => {
+      iconElement.classList.add('highlight');
+      };
+
+      const unhighlight = () => {
+      iconElement.classList.remove('highlight');
+      };
+
+      const previewFile = (file) => {
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = function() {
+      let img = document.createElement('img');
+      img.src = reader.result;
+      document.getElementById('gallery').appendChild(img);
+      editorElement.classList.add('is-visible');
+      }
+      };
+
+      const handleFiles = (files) => {
+      files = [...files];
+      files.forEach(previewFile);
+      };
+
+      const handleDrop = (e) => {
+      let dt = e.dataTransfer;
+      let files = dt.files;
+      
+      console.log('files', files);
+      
+      handleFiles(files);
+      };
+
+      function handleUpdate() {
+      console.log(this.value);
+      const suffix = this.dataset.unit;
+      document.documentElement.style.setProperty(`--${this.name}`, this.value +       suffix);
+      }
+
+      inputRange.forEach(input => input.addEventListener('change', handleUpdate));
+      inputRange.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+      dragEvents.forEach(eventName => {
+      dropArea.addEventListener(eventName, preventDefaults, false)
+      });
+
+      dragHighlight.forEach(eventName => {
+      dropArea.addEventListener(eventName, highlight, false)
+      });
+
+      dragUnighlight.forEach(eventName => {
+      dropArea.addEventListener(eventName, unhighlight, false)
+      });
+
+
+      dropArea.addEventListener('drop', handleDrop, false);
+    </script>
+    
+  
 </body>
 </html>
