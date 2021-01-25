@@ -33,6 +33,7 @@
                             <li>
                                 <a class="dropdown-item" href="#">Profile</a>
                             </li>
+                            <li><hr class="dropdown-divider"></li>
                             <li>
                                 <a class="dropdown-item" href="#">Logout</a>
                             </li>
@@ -81,11 +82,11 @@
     <div class="container-fluid panel bg-primary">
       <div class="row h-100">
         <aside class="col-3 col-xl-2 d-none d-lg-block bg-light text-center">
-            <li class="nav-item mb-3 mt-4 fs-4 active">
-              <a class="nav-link text-dark active" href="index.html">Teachers</a>
+            <li class="nav-item mb-3 mt-4 fs-4">
+              <a class="nav-link" href="index.html">Teachers</a>
             </li>
-            <li class="nav-item mb-3 fs-4">
-              <a class="nav-link" href="courses.html">Courses</a>
+            <li class="nav-item mb-3 fs-4 active">
+              <a class="nav-link text-dark active" href="courses.html">Courses</a>
             </li>
             <li class="nav-item mb-3 fs-4">
               <a class="nav-link" href="#">Students</a>
@@ -100,36 +101,58 @@
             <div class="col-sm-6 ps-5">
             
               <div class="row mt-5 mb-4">
-                <h3>Edit teacher</h3>
+                <h3>Edit course</h3>
               </div>
               <div class="row">
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Name">
-                  <label class="ps-4" for="floatingInput">Teacher's name</label>
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Title">
+                  <label class="ps-4" for="floatingInput">Title</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="form-floating mb-4">
+                  <textarea class="form-control about-teacher"  placeholder="Description" id="floatingTextarea"></textarea>
+                  <label class="ps-4" for="floatingTextarea">Description</label>
                 </div>
               </div>
               <div class="row">
                 <div class="form-floating mb-4">
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Quote">
-                  <label class="ps-4" for="floatingInput">Quote</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-floating mb-4">
-                  <textarea class="form-control about-teacher"  placeholder="About" id="floatingTextarea"></textarea>
-                  <label class="ps-4" for="floatingTextarea">About</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-floating mb-4">
-                  <select class="form-select"   id="floatingSelect" aria-label="Teaching a course">
-                    <option selected>Select a course</option>
-                    <option value="1">Programming</option>
-                    <option value="2">Graphic design</option>
-                    <option value="3">Business &amp;  Management</option>
+                  <select class="form-select"   id="floatingSelect" aria-label="Pick a teacher">
+                    <option selected>Select a teacher</option>
+                    <option value="1">Mark Wilson</option>
+                    <option value="2">Jessie Ca</option>
+                    <option value="3">Catherine</option>
                   </select>
-                  <label class="ps-4" for="floatingSelect">Teaching a  course</label>
+                  <label class="ps-4" for="floatingSelect">Teacher</label>
                 </div>
+              </div>
+              <div class="row  mb-4">
+                <div class="input-group m-0 row">
+                  
+                  <button class="btn btn-outline-secondary col-3" type="button" aria-expanded="false">Free</button>
+                  
+                  <button class="btn btn-outline-secondary col-9" type="button">
+                    <div class="row m-0 p-0">
+                      <select class="form-select col"   id="floatingSelect" aria-label="Teaching a course">
+                        <option selected disabled>Currency</option>
+                        <option value="1">USD</option>
+                        <option value="2">EUR</option>
+                        <option value="3">RSD</option>
+                      </select>
+                    
+                      <input type="number" class="form-control col" aria-label="Price of the course in selected currency">
+                    </div>
+                  </button>
+                  
+                </div>
+              </div>
+              <div class="row m-0">
+                  <input type="date" class="btn btn-outline-secondary col me-2">
+
+                  <input type="number" class="btn btn-outline-secondary col" placeholder="Course duration (hours)">
+
               </div>
           
             </div>
@@ -146,8 +169,8 @@
                 
                   <div class="button-wrapper">
                       <label class="label text-light" for="fileElem">Drag a photo here to upload or</label>
-                      <button type="button" class="btn-drop bg-light text-dark">Choose photo</button>
-                      <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                      <button type="button" class="btn-drop bg-light text-dark btn">Choose photo</button>
+                      <input type="file" id="fileElem" class="btn" multiple accept="image/*" onchange="handleFiles(this.files)">
                       
                   </div>
               </form>
@@ -168,7 +191,11 @@
 
 
 
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 
 
     <script>
