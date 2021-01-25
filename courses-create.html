@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+
+    <header class="container-fluid">
+        <div class="row shadow justify-content-between header-row align-items-center bg-light mb-1">
+          
+                <div class="logo col">
+                    <p class="text-dark">Logo</p>
+                </div>
+                
+              <div class="dropdown active-user col text-end">
+                        
+                        <button class="btn bg-white dropdown-toggle"   type="button" id="dropdownMenuButton"     data-bs-toggle="dropdown" aria-expanded="false">
+                          User
+                        </button>
+                        
+                        <ul class="dropdown-menu dropdown-menu-end shadow-sm"         aria-labelledby="dropdownMenuButton">
+                            <li>
+                                <a class="dropdown-item" href="#">Profile</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </li>
+                        </ul>
+               </div>
+        </div>
+        <div class="row navigation d-lg-none">
+
+            
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                      
+                        <a class="navbar-brand" href="#" data-bs-toggle="collapse"  data-bs-target="#navbarNav" >Navigation</a>
+                      
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        
+                        <ul class="navbar-nav">
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="index.html">Teachers</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"  href="#">Courses</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Students</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" >Configuration</a>
+                          </li>
+
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid panel bg-primary">
+      <div class="row h-100">
+        <aside class="col-3 col-xl-2 d-none d-lg-block bg-light text-center">
+            <li class="nav-item mb-3 mt-4 fs-4">
+              <a class="nav-link" href="index.html">Teachers</a>
+            </li>
+            <li class="nav-item mb-3 fs-4 active">
+              <a class="nav-link text-dark active" href="courses.html">Courses</a>
+            </li>
+            <li class="nav-item mb-3 fs-4">
+              <a class="nav-link" href="#">Students</a>
+            </li>
+            <li class="nav-item mb-3 fs-4">
+              <a class="nav-link" href="#">Configuration</a>
+            </li>
+        </aside>
+
+        <main class="col bg-white">
+          <div class="row">    
+            <div class="col-sm-6 ps-lg-5">
+            
+              <div class="row mt-5 mb-4">
+                <h3>Edit course</h3>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-3 mb-lg-4">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Title">
+                  <label class="ps-4" for="floatingInput">Title</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="form-floating mb-3 mb-lg-4">
+                  <textarea class="form-control about-teacher"  placeholder="Description" id="floatingTextarea"></textarea>
+                  <label class="ps-4" for="floatingTextarea">Description</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-floating mb-3 mb-lg-4">
+                  <select class="form-select"   id="floatingSelect" aria-label="Pick a teacher">
+                    <option selected>Select a teacher</option>
+                    <option value="1">Mark Wilson</option>
+                    <option value="2">Jessie Ca</option>
+                    <option value="3">Catherine</option>
+                  </select>
+                  <label class="ps-4" for="floatingSelect">Teacher</label>
+                </div>
+              </div>
+              <div class="row mb-3 mb-lg-4">
+                <div class="input-group m-0 row">
+                  
+                  <button class="btn btn-outline-secondary col-3" type="button" aria-expanded="false">Free</button>
+                  
+                  <button class="btn btn-outline-secondary col-9" type="button">
+                    <div class="row m-0 p-0">
+                      <select class="form-select col w-50"   id="floatingSelect" aria-label="Teaching a course">
+                        <option selected disabled>Currency</option>
+                        <option value="1">USD</option>
+                        <option value="2">EUR</option>
+                        <option value="3">RSD</option>
+                      </select>
+                    
+                      <input type="number" class="form-control col w-50" aria-label="Price of the course in selected currency">
+                    </div>
+                  </button>
+                  
+                </div>
+              </div>
+              <div class="row m-0">
+                  <input type="date" class="btn btn-outline-secondary col me-2 w-50">
+
+                  <input type="number" class="btn btn-outline-secondary col w-50" placeholder="Course duration (hours)">
+
+              </div>
+          
+            </div>
+          
+          <div class="col-sm-6 mt-3 mt-lg-2 d-flex align-items-center justify-content-center">
+            <div class="drop-it-hot bg-secondary" id="drop-area">
+              <div class="circle">
+                  <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0h24v24H0z" fill="none" />
+                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                  </svg>
+              </div>
+              <form class="choose-files">
+                
+                  <div class="button-wrapper">
+                      <label class="label text-light" for="fileElem">Drag a photo here to upload or</label>
+                      <button type="button" class="btn-drop bg-light text-dark btn">Choose photo</button>
+                      <input type="file" id="fileElem" class="btn" multiple accept="image/*" onchange="handleFiles(this.files)">
+                      
+                  </div>
+              </form>
+              <div id="gallery"></div>
+            </div>
+
+          </div>
+
+        </div>
+          
+      </main>
+    </div>
+  </div>
+
+    
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+
+    <script>
+      const dragEvents = ['dragenter', 'dragover', 'dragleave', 'drop'];
+      const dragHighlight = ['dragenter', 'dragover'];
+      const dragUnighlight = ['dragleave', 'drop'];
+      const inputRange = document.querySelectorAll('.editor input');
+
+      const dropArea = document.getElementById('drop-area');
+      const iconElement = document.querySelector('.circle');
+      const editorElement = document.querySelector('.editor');
+
+      const preventDefaults = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      };
+
+      const highlight = () => {
+      iconElement.classList.add('highlight');
+      };
+
+      const unhighlight = () => {
+      iconElement.classList.remove('highlight');
+      };
+
+      const previewFile = (file) => {
+      let reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = function() {
+      let img = document.createElement('img');
+      img.src = reader.result;
+      document.getElementById('gallery').appendChild(img);
+      editorElement.classList.add('is-visible');
+      }
+      };
+
+      const handleFiles = (files) => {
+      files = [...files];
+      files.forEach(previewFile);
+      };
+
+      const handleDrop = (e) => {
+      let dt = e.dataTransfer;
+      let files = dt.files;
+      
+      console.log('files', files);
+      
+      handleFiles(files);
+      };
+
+      function handleUpdate() {
+      console.log(this.value);
+      const suffix = this.dataset.unit;
+      document.documentElement.style.setProperty(`--${this.name}`, this.value +       suffix);
+      }
+
+      inputRange.forEach(input => input.addEventListener('change', handleUpdate));
+      inputRange.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+      dragEvents.forEach(eventName => {
+      dropArea.addEventListener(eventName, preventDefaults, false)
+      });
+
+      dragHighlight.forEach(eventName => {
+      dropArea.addEventListener(eventName, highlight, false)
+      });
+
+      dragUnighlight.forEach(eventName => {
+      dropArea.addEventListener(eventName, unhighlight, false)
+      });
+
+
+      dropArea.addEventListener('drop', handleDrop, false);
+    </script>
+    
+  
+</body>
+</html>
