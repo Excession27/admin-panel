@@ -216,13 +216,13 @@
                   
                 </div>
               </div>
-              <div class="row w-100">
+              <div class="row w-100 mb-3">
                 <div class="input-group col">
                   <label class="btn btn-outline-secondary w-50" for="">Business &amp; Management</label>
                   <button class="btn btn-danger text-white w-25" type="button">Delete</button>
                   
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success w-25" data-bs-toggle="modal" data-bs-target="#edit-course">
+                <button type="button" class="btn btn-success w-25 rounded-end" data-bs-toggle="modal" data-bs-target="#edit-course">
                   Edit
                 </button>
                 
@@ -331,12 +331,236 @@
                   
                 </div>
               </div>
-              <div class="row">
-
-              </div>
-              <div class="row">
-
+              <div class="row w-100 mb-3">
+                <div class="input-group col">
+                  <label class="btn btn-outline-secondary w-50" for="">Graphic &amp; Web Design</label>
+                  <button class="btn btn-danger text-white w-25" type="button">Delete</button>
+                  
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success w-25 rounded-end" data-bs-toggle="modal" data-bs-target="#edit-course">
+                  Edit
+                </button>
                 
+                <!-- Modal -->
+                <div class="modal fade" id="edit-course" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit course</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <main class="col bg-white">
+                          <div class="row">    
+                            <div class="col-sm-6 ps-lg-5">
+                            
+                             
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <input type="text" class="form-control" id="floatingInput" placeholder="Title">
+                                  <label class="ps-4" for="floatingInput">Title</label>
+                                </div>
+                              </div>
+                
+                
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <textarea class="form-control about-teacher"  placeholder="Description" id="floatingTextarea"></textarea>
+                                  <label class="ps-4" for="floatingTextarea">Description</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <select class="form-select"   id="floatingSelect" aria-label="Pick a teacher">
+                                    <option selected disabled>Select a teacher</option>
+                                    <option value="1">Mark Wilson</option>
+                                    <option value="2">Jessie Ca</option>
+                                    <option value="3">Catherine</option>
+                                  </select>
+                                  <label class="ps-4" for="floatingSelect">Teacher</label>
+                                </div>
+                              </div>
+                              <div class="row mb-3 mb-lg-4">
+                                <div class="input-group m-0 row">
+                                  
+                                  <button class="btn btn-outline-secondary col-3" type="button" aria-expanded="false">Free</button>
+                                  
+                                  <button class="btn btn-outline-secondary col-9" type="button">
+                                    <div class="row m-0 p-0">
+                                      <select class="form-select col w-50"   id="floatingSelect" aria-label="Teaching a course">
+                                        <option selected disabled>Currency</option>
+                                        <option value="1">USD</option>
+                                        <option value="2">EUR</option>
+                                        <option value="3">RSD</option>
+                                      </select>
+                                    
+                                      <input type="number" class="form-control col w-50" aria-label="Price of the course in selected currency">
+                                    </div>
+                                  </button>
+                                  
+                                </div>
+                              </div>
+                              <div class="row m-0">
+                                  <input type="date" class="btn btn-outline-secondary col me-2 w-50">
+                
+                                  <input type="number" class="btn btn-outline-secondary col w-50" placeholder="Course duration (hours)">
+                
+                              </div>
+                          
+                            </div>
+                          
+                          <div class="col-sm-6 mt-3 mt-lg-2 d-flex align-items-center justify-content-center">
+                            <div class="drop-it-hot bg-secondary" id="drop-area">
+                              <div class="circle">
+                                  <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M0 0h24v24H0z" fill="none" />
+                                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                                  </svg>
+                              </div>
+                              <form class="choose-files">
+                                
+                                  <div class="button-wrapper">
+                                      <label class="label text-light" for="fileElem">Drag a photo here to upload or</label>
+                                      <button type="button" class="btn-drop bg-light text-dark btn">Choose photo</button>
+                                      <input type="file" id="fileElem" class="btn" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                      
+                                  </div>
+                              </form>
+                              <div id="gallery"></div>
+                            </div>
+                
+                          </div>
+                
+                        </div>
+                          
+                      </main>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+                  
+                </div>
+              </div>
+              <div class="row w-100 mb-3">
+
+                <div class="input-group col">
+                  <label class="btn btn-outline-secondary w-50" for="">Marketing Communication</label>
+                  <button class="btn btn-danger text-white w-25" type="button">Delete</button>
+                  
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success w-25 rounded-end" data-bs-toggle="modal" data-bs-target="#edit-course">
+                  Edit
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="edit-course" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit course</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <main class="col bg-white">
+                          <div class="row">    
+                            <div class="col-sm-6 ps-lg-5">
+                            
+                             
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <input type="text" class="form-control" id="floatingInput" placeholder="Title">
+                                  <label class="ps-4" for="floatingInput">Title</label>
+                                </div>
+                              </div>
+                
+                
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <textarea class="form-control about-teacher"  placeholder="Description" id="floatingTextarea"></textarea>
+                                  <label class="ps-4" for="floatingTextarea">Description</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="form-floating mb-3 mb-lg-4">
+                                  <select class="form-select"   id="floatingSelect" aria-label="Pick a teacher">
+                                    <option selected disabled>Select a teacher</option>
+                                    <option value="1">Mark Wilson</option>
+                                    <option value="2">Jessie Ca</option>
+                                    <option value="3">Catherine</option>
+                                  </select>
+                                  <label class="ps-4" for="floatingSelect">Teacher</label>
+                                </div>
+                              </div>
+                              <div class="row mb-3 mb-lg-4">
+                                <div class="input-group m-0 row">
+                                  
+                                  <button class="btn btn-outline-secondary col-3" type="button" aria-expanded="false">Free</button>
+                                  
+                                  <button class="btn btn-outline-secondary col-9" type="button">
+                                    <div class="row m-0 p-0">
+                                      <select class="form-select col w-50"   id="floatingSelect" aria-label="Teaching a course">
+                                        <option selected disabled>Currency</option>
+                                        <option value="1">USD</option>
+                                        <option value="2">EUR</option>
+                                        <option value="3">RSD</option>
+                                      </select>
+                                    
+                                      <input type="number" class="form-control col w-50" aria-label="Price of the course in selected currency">
+                                    </div>
+                                  </button>
+                                  
+                                </div>
+                              </div>
+                              <div class="row m-0">
+                                  <input type="date" class="btn btn-outline-secondary col me-2 w-50">
+                
+                                  <input type="number" class="btn btn-outline-secondary col w-50" placeholder="Course duration (hours)">
+                
+                              </div>
+                          
+                            </div>
+                          
+                          <div class="col-sm-6 mt-3 mt-lg-2 d-flex align-items-center justify-content-center">
+                            <div class="drop-it-hot bg-secondary" id="drop-area">
+                              <div class="circle">
+                                  <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M0 0h24v24H0z" fill="none" />
+                                      <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                                  </svg>
+                              </div>
+                              <form class="choose-files">
+                                
+                                  <div class="button-wrapper">
+                                      <label class="label text-light" for="fileElem">Drag a photo here to upload or</label>
+                                      <button type="button" class="btn-drop bg-light text-dark btn">Choose photo</button>
+                                      <input type="file" id="fileElem" class="btn" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                      
+                                  </div>
+                              </form>
+                              <div id="gallery"></div>
+                            </div>
+                
+                          </div>
+                
+                        </div>
+                          
+                      </main>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    
+                  
+                </div>
                 
               </div>
               <div class="row">
